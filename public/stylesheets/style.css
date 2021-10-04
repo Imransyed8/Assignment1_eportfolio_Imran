@@ -1,3 +1,4 @@
+/*Syed Abdul Imran 301176718 01 October 2021*/
 body {
     padding: 50px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -391,8 +392,8 @@ body {
   }
   .profilepic {
     border-radius: 45%;
-    width: 150px;
-    height: 160px;
+    width: 160px;
+    height: 170px;
     margin-top: 20px;
     margin-left: 15px;
   }
@@ -420,5 +421,5 @@ body {
   }
   .logo {
     font-size: 50px;
-    color: red;
+    color: orange;
   }

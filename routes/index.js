@@ -1,5 +1,6 @@
-var express = require('express');
-var router = express.Router();
+/*Syed Abdul Imran 301176718 01 October 2021*/
+let express = require('express');
+let router = express.Router();
 const fs = require("fs");
 
 /* GET home page. */
@@ -23,21 +24,21 @@ router.get('/projects', function(req, res, next) {
         Role: "Developer",
         WebAddress: "https://www.smartdhyana.com/",
         img:"https://smartdhyanablog.files.wordpress.com/2019/08/dhyana_-why-do-you-need-a-device-for-meditation.png",
-        description: "Dhyana is a Meditation Ring which tracks your HRV Values and also calculates your attention. A ring that can test your Meditaion and gives how stressful and relaxed you are through out the Meditaion sessions"
+        description: "Dhyana is a meditation ring that tracks your HRV levels and also calculates your attention. A ring that can put your meditation to the test and show how stressful and relaxed you are during meditation sessions."
       },
       {
-        Title: "BankMuscat InternetBanking",
-        Role: "Performance Tester",
-        WebAddress: "https://www.bankmuscatonline.com/",
-        img:"/Assets/BM.png",
-        description: "Bank Muscat is a financial services provider in the Sultanate of Oman providing corporate banking, retail banking, investment banking, treasury, private banking and asset management. Internet Banking application enables customers to conduct a range of financial transactions through the financial institution's website."
+        Title: "Amazon",
+        Role: "Tech Support Engineer",
+        WebAddress: "https://www.amazon.com/",
+        img:"/Assets/Amazon.jpg",
+        description: "Amazon Inc. is an American multinational conglomerate which focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence. It is one of the Big Five companies in the U.S. information technology industry, along with Google, Apple, Microsoft, and Facebook."
       },
       {
-        Title: "Commercial Bank International",
-        Role: "Performance Tester",
-        WebAddress: "https://www.cbiuae.com/",
-        img:"/Assets/CBI.jpg",
-        description: "CBI is a leading Finance provider in U.A.E. CBI offers a wide range of banking products & services to suit your financial needs."
+        Title: "Tech Mahindra",
+        Role: "Tech Support Specialist",
+        WebAddress: "https://www.techmahindra.com/",
+        img:"/Assets/Tech_em.jpg",
+        description: "Tech Mahindra is an Indian multinational company that provides information technology and business process outsourcing services. A subsidiary of the Mahindra Group, the company is headquartered in Pune and has its registered office in Mumbai."
       },
     ] }
   );
@@ -54,13 +55,19 @@ router.get('/about', function(req, res, next) {
 router.get('/contact', function(req, res, next) {
   res.render('contact', { title: 'Contact Page' });
 });
-/* GET Contact submision Thank You page. */
-router.get("/home", function(req, res, next) {
-  res.render('index', { title: 'Home Page' });
+/* GET Contact submision  page. */
+router.post("/contact", function(req, res) {
+  console.log(req.body.email);
+  console.log(req.body.fname);
+  console.log(req.body.lname);
+  console.log(req.body.message);
+  res.redirect("/home");
 });
 
+
+
 router.get("/resume",(req, res, next)=>{
-    var data =fs.readFileSync('./public/Assets/Resume_Nikhil.pdf');
+    let data =fs.readFileSync('./public/Assets/esume_Imran.pdf');
     res.contentType("application/pdf");
     res.send(data);
 });
